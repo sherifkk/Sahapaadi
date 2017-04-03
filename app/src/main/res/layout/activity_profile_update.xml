@@ -1,61 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.athira.sahapaadi.ProfileUpdate"
-    android:gravity="center_vertical"
-    android:layout_margin="16dp">
+    android:background="#ffffff"
+    tools:context="com.example.athira.sahapaadi.LoginPage">
 
-    <EditText
-        android:id="@+id/universityField"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        app:srcCompat="@drawable/sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="University"
-        android:inputType="text"
-        />
+        android:orientation="vertical"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:id="@+id/profileUpdateLinearLayout">
 
+        <EditText
+            android:id="@+id/university"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/imageView"
+            android:layout_alignRight="@+id/imageView"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:hint="University"
+            android:inputType="text|textPersonName" />
 
-    <EditText
-        android:id="@+id/programField"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="Program"
-        android:inputType="text" />
+        <EditText
+            android:id="@+id/program"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/university"
+            android:layout_alignStart="@+id/university"
+            android:layout_below="@+id/university"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Program"
+            android:inputType="text|textWebEmailAddress" />
 
-    <EditText
-        android:id="@+id/schemeField"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="Scheme"
-        android:inputType="number" />
+        <EditText
+            android:id="@+id/schema"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/university"
+            android:layout_alignStart="@+id/university"
+            android:layout_below="@+id/university"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Schema"
+            android:inputType="number" />
 
-
-    <EditText
-        android:id="@+id/semesterField"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="Semester"
-        android:inputType="number" />
-
+        <EditText
+            android:id="@+id/semester"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/university"
+            android:layout_alignStart="@+id/university"
+            android:layout_below="@+id/university"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Semester"
+            android:inputType="number" />
+    </LinearLayout>
 
     <Button
-        android:id="@+id/buttonProfileRegister"
+        android:id="@+id/buttonSignup"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:text="REGISTER"
-        android:onClick="sendMessage"/>
-</LinearLayout>
+        android:layout_alignEnd="@+id/profileUpdateLinearLayout"
+        android:layout_alignLeft="@+id/profileUpdateLinearLayout"
+        android:layout_alignRight="@+id/profileUpdateLinearLayout"
+        android:layout_alignStart="@+id/profileUpdateLinearLayout"
+        android:layout_below="@+id/profileUpdateLinearLayout"
+        android:onClick="sendMessage"
+        android:text="SIGNUP" />
+
+
+
+</RelativeLayout>
+
+
