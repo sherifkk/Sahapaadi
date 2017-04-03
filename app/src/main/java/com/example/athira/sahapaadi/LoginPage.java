@@ -16,25 +16,20 @@ public class LoginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Lobster-Regular.ttf");
-        TextView tv = (TextView) findViewById(R.id.logo_text1);
-        tv.setTypeface(type);
         Button buttonLogin = (Button) findViewById(R.id.buttonLogin);
-        EditText emailLoginField = (EditText) findViewById(R.id.emailLoginField);
-        EditText passwordLoginField = (EditText) findViewById(R.id.passwordLoginField);
 
 
     }
     public void loginClick(View v)
     {
         //check if password or email field is empty
-        EditText emailLoginField = (EditText) findViewById(R.id.emailLoginField);
-        EditText passwordLoginField = (EditText) findViewById(R.id.passwordLoginField);
+        EditText loginEmailID = (EditText) findViewById(R.id.loginEmailID);
+        EditText loginPassword = (EditText) findViewById(R.id.loginPassword);
 
-        if(emailLoginField.getText().length()==0)
-            emailLoginField.setError("Email ID is mandatory");
-        if(passwordLoginField.getText().length()==0)
-            passwordLoginField.setError("Password is mandatory");
+        if(loginEmailID.getText().length()==0)
+            loginEmailID.setError("Email ID is mandatory");
+        if(loginPassword.getText().length()==0)
+            loginPassword.setError("Password is mandatory");
 
 
 
