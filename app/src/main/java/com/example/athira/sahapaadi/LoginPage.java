@@ -42,7 +42,7 @@ public class LoginPage extends AppCompatActivity {
     }
     public void sendMessage(View view)
     {
-        Intent intent = new Intent(LoginPage.this,ProfileUpdate.class);
+        Intent intent = new Intent(LoginPage.this,LoginDetails.class);
         startActivity(intent);
     }
 }

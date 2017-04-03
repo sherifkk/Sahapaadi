@@ -1,219 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.athira.sahapaadi.ProfileUpdate">
-
-    <TextView
-        android:id="@+id/logo_text2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:text="@string/logo_text2"
-        android:textColor="#ff5252"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/programText"
-        android:layout_toEndOf="@+id/programText" />
-
-    <TextView
-        android:id="@+id/nameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="21dp"
-        android:text="Name"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:layout_below="@+id/logo_text2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/profileEmailText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:text="Email ID"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:layout_below="@+id/nameText"
-        android:layout_alignLeft="@+id/nameText"
-        android:layout_alignStart="@+id/nameText" />
-
-    <TextView
-        android:id="@+id/programText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
-        android:text="Program"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:layout_below="@+id/profileEmailText"
-        android:layout_alignLeft="@+id/profileEmailText"
-        android:layout_alignStart="@+id/profileEmailText" />
-
-    <TextView
-        android:id="@+id/universityText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/programText"
-        android:layout_alignStart="@+id/programText"
-        android:layout_below="@+id/programText"
-        android:layout_marginTop="28dp"
-        android:text="University"
-        android:textColor="#000000"
-        android:textStyle="bold"/>
-
-
-
-    <TextView
-        android:id="@+id/schemaText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
-        android:text="Schema"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:layout_below="@+id/universityText"
-        android:layout_alignLeft="@+id/universityText"
-        android:layout_alignStart="@+id/universityText" />
-
-    <TextView
-        android:id="@+id/semesterText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Semester"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:layout_below="@+id/schemaText"
-        android:layout_alignLeft="@+id/schemaText"
-        android:layout_alignStart="@+id/schemaText" />
-    <TextView
-        android:id="@+id/collegeField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/collegeField"
-        android:layout_alignLeft="@+id/semesterText"
-        android:layout_alignStart="@+id/semesterText"
-        android:text="College"
-        android:textColor="#000000"
-        android:textStyle="bold"/>
-    <TextView
-        android:id="@+id/passwordText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Password"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:layout_below="@+id/collegeField"
-        android:layout_alignLeft="@+id/semesterText"
-        android:layout_alignStart="@+id/semesterText" />
-
-    <EditText
-        android:id="@+id/nameField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_alignBaseline="@+id/nameText"
-        android:layout_alignBottom="@+id/nameText"
-        android:layout_toRightOf="@+id/universityText"
-        android:layout_toEndOf="@+id/universityText" />
-
-    <EditText
-        android:id="@+id/emailidField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:layout_alignBaseline="@+id/profileEmailText"
-        android:layout_alignBottom="@+id/profileEmailText"
-        android:layout_alignLeft="@+id/nameField"
-        android:layout_alignStart="@+id/nameField" />
-
-    <EditText
-        android:id="@+id/programField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_alignBaseline="@+id/programText"
-        android:layout_alignBottom="@+id/programText"
-        android:layout_alignLeft="@+id/emailidField"
-        android:layout_alignStart="@+id/emailidField" />
+    android:orientation="vertical"
+    tools:context="com.example.athira.sahapaadi.ProfileUpdate"
+    android:gravity="center_vertical"
+    android:layout_margin="16dp">
 
     <EditText
         android:id="@+id/universityField"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_below="@+id/programField"
-        android:layout_alignLeft="@+id/programField"
-        android:layout_alignStart="@+id/programField" />
+        android:hint="University"
+        android:inputType="text"
+        />
+
 
     <EditText
-        android:id="@+id/schemaField"
-        android:layout_width="wrap_content"
+        android:id="@+id/programField"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:ems="10"
-        android:inputType="text|number"
-        android:layout_above="@+id/semesterField"
-        android:layout_alignLeft="@+id/universityField"
-        android:layout_alignStart="@+id/universityField" />
+        android:hint="Program"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/schemeField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Scheme"
+        android:inputType="number" />
+
 
     <EditText
         android:id="@+id/semesterField"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:ems="10"
-        android:inputType="number"
-        android:layout_above="@+id/collegeField"
-        android:layout_alignLeft="@+id/schemaField"
-        android:layout_alignStart="@+id/schemaField" />
+        android:hint="Semester"
+        android:inputType="number" />
 
-
-
-    <EditText
-        android:id="@+id/passwordField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:layout_alignBottom="@+id/passwordText"
-        android:layout_alignLeft="@+id/collegeField"
-        android:layout_alignStart="@+id/collegeField" />
 
     <Button
         android:id="@+id/buttonProfileRegister"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/passwordField"
-        android:layout_alignStart="@+id/passwordField"
-        android:layout_below="@+id/passwordField"
-        android:layout_marginTop="11dp"
-        android:onClick="sendMessage"
-        android:text="Register" />
-
-
-
-    <EditText
-        android:id="@+id/collegeField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/semesterField"
-        android:layout_alignStart="@+id/semesterField"
-        android:layout_below="@+id/semesterText"
-        android:ems="10"
-        android:inputType="textPersonName" />
-</RelativeLayout>
+        android:layout_gravity="right"
+        android:text="REGISTER"
+        android:onClick="sendMessage"/>
+</LinearLayout>
