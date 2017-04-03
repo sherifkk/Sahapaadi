@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Sahapaadi</string>
+    <string name="logo_text1">Sahapaadi</string>
+    <string name="logo_text2">Sahapaadi</string>
+    <string name="openToggle">open</string>
+    <string name="closeToggle">close</string>
+
+</resources>
