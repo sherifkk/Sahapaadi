@@ -6,14 +6,7 @@
     android:id="@+id/homeTab">
 
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listviewid"
-        android:layout_gravity="center_horizontal"
-        android:choiceMode="singleChoice"
-        android:fastScrollEnabled="true">
-</ListView>
+
 
 
 
