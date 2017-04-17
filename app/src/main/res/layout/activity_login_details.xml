@@ -1,93 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    tools:context="com.example.athira.sahapaadi.LoginPage">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bubble_background"
+    android:orientation="vertical"
+    >
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        app:srcCompat="@drawable/sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+  <!--<ImageView-->
+  <!--android:id="@+id/imageView"-->
+  <!--android:layout_width="wrap_content"-->
+  <!--android:layout_height="wrap_content"-->
+  <!--android:layout_marginTop="21dp"-->
+  <!--app:srcCompat="@drawable/sp"-->
+  <!--android:layout_alignParentTop="true"-->
+  <!--android:layout_centerHorizontal="true" />-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
-        android:id="@+id/profileUpdateLinearLayout">
+  <LinearLayout
+      android:id="@+id/login"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:orientation="vertical"
+      >
 
-        <EditText
-            android:id="@+id/university"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/imageView"
-            android:layout_alignRight="@+id/imageView"
-            android:layout_below="@+id/imageView"
-            android:layout_marginTop="0dp"
-            android:ems="10"
-            android:hint="Username"
-            android:inputType="textPersonName" />
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="#34ffffff"
+        >
 
-        <EditText
-            android:id="@+id/signupEmailID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/university"
-            android:layout_alignStart="@+id/university"
-            android:layout_below="@+id/university"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="Email ID"
-            android:inputType="textWebEmailAddress" />
+      <EditText
+          android:id="@+id/signupName"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:background="@android:color/transparent"
+          android:ems="10"
+          android:hint="Name"
+          android:inputType="textPersonName"
+          android:textColor="#fff"
+          android:textColorHint="#a8ffffff"
+          />
 
-        <EditText
-            android:id="@+id/signupPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/university"
-            android:layout_alignStart="@+id/university"
-            android:layout_below="@+id/university"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword" />
+    </FrameLayout>
 
-        <EditText
-            android:id="@+id/signupConfirmPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/university"
-            android:layout_alignStart="@+id/university"
-            android:layout_below="@+id/university"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="Confirm Password"
-            android:inputType="textPassword" />
-    </LinearLayout>
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="#34ffffff"
+        >
 
-    <Button
+
+      <EditText
+          android:id="@+id/signupEmailID"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:background="@android:color/transparent"
+          android:ems="10"
+          android:hint="Email ID"
+          android:inputType="textWebEmailAddress"
+          android:textColor="#fff"
+          android:textColorHint="#a8ffffff"
+          />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="#34ffffff"
+        >
+
+      <EditText
+          android:id="@+id/signupPassword"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:background="@android:color/transparent"
+          android:ems="10"
+          android:hint="Password"
+          android:inputType="textPassword"
+          android:textColor="#fff"
+          android:textColorHint="#a8ffffff"
+          />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="#34ffffff"
+        >
+      <EditText
+          android:id="@+id/signupConfirmPassword"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:background="@android:color/transparent"
+          android:ems="10"
+          android:hint="Confirm Password"
+          android:inputType="textPassword"
+          android:textColor="#fff"
+          android:textColorHint="#a8ffffff"
+          />
+    </FrameLayout>
+
+    <FrameLayout
         android:id="@+id/buttonSignupNext"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/profileUpdateLinearLayout"
-        android:layout_alignLeft="@+id/profileUpdateLinearLayout"
-        android:layout_alignRight="@+id/profileUpdateLinearLayout"
-        android:layout_alignStart="@+id/profileUpdateLinearLayout"
-        android:layout_below="@+id/profileUpdateLinearLayout"
-        android:text="Next"
-        android:onClick="sendMessage"/>
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/login_background"
+        >
 
+      <TextView
 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:text="NEXT"
+          android:textColor="#c3ffffff"
+          />
+
+    </FrameLayout>
+  </LinearLayout>
+
+  <com.github.glomadrian.grav.GravView
+      android:id="@+id/grav"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_centerInParent="true"
+      app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+      app:array_colors="@array/bubble"
+      app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+      app:regular_cell_size="300"
+      app:regular_variance="200"
+      app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+      app:ball_from_size="10dp"
+      app:ball_to_size="20dp"
+      app:animationGenerators="@array/BubbleAnimations"
+      app:side_to_side_min_duration="10000"
+      app:side_to_side_max_duration="10000"
+      app:side_to_side_direction="leftToRight"
+      app:shake_direction="vertical"
+      app:shake_min_duration="10000"
+      app:shake_max_duration="20000"
+      app:shake_variance="500dp"
+      />
 
 </RelativeLayout>
 

@@ -4,9 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+import android.view.View.OnClickListener;
 import android.widget.EditText;
-
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class LoginPage extends AppCompatActivity {
 
@@ -14,11 +15,27 @@ public class LoginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-        Button buttonLogin = (Button) findViewById(R.id.buttonLogin);
+        TextView buttonLogin = (TextView) findViewById(R.id.buttonLogin);
+        buttonLogin.setOnClickListener(new OnClickListener() {
+            @Override public void onClick(View view) {
 
+                loginClick();
+            }
+        });
+
+        LinearLayout buttonSignup = (LinearLayout) findViewById(R.id.buttonSignup);
+        buttonSignup.setOnClickListener(new OnClickListener() {
+            @Override public void onClick(View view) {
+
+                sendMessage();
+
+
+
+            }
+        });
 
     }
-    public void loginClick(View v)
+    public void loginClick()
     {
         //check if password or email field is empty
         EditText loginEmailID = (EditText) findViewById(R.id.university);
@@ -29,11 +46,8 @@ public class LoginPage extends AppCompatActivity {
         if(loginPassword.getText().length()==0)
             loginPassword.setError("Password is mandatory");
 
-
-
-
     }
-    public void sendMessage(View view)
+    public void sendMessage()
     {
         Intent intent = new Intent(LoginPage.this,LoginDetails.class);
         startActivity(intent);
