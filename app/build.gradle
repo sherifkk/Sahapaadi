@@ -29,6 +29,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.volley:volley:1.0.0'
     compile 'com.github.glomadrian:grav:1@aar'
-    compile 'com.github.yalantis:jellytoolbar:v1.0'
+//    compile 'com.github.yalantis:jellytoolbar:v1.0'
+    compile 'com.github.mmoamenn:ProgressImage_Android:0.0.2'
     testCompile 'junit:junit:4.12'
 }

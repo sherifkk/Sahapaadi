@@ -1,6 +1,5 @@
 package com.example.athira.sahapaadi;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -49,6 +48,7 @@ public class LoginDetails extends AppCompatActivity {
         if (password.length()<6){
           editPassword.setError("Password must be of minimum 6 characters length");
           editPassword.requestFocus();
+          editPassword.selectAll();
           return;
         }
 
@@ -58,11 +58,11 @@ public class LoginDetails extends AppCompatActivity {
           editPassword.selectAll();
           editConfirmPassword.setText("");
           return;
-        }
+          }
 
 
-        Intent intent = new Intent(LoginDetails.this, ProfileUpdate.class);
-        startActivity(intent);
+
+
       }
     });
   }
