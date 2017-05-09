@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+  <com.yalantis.jellytoolbar.widget.JellyToolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/colorPrimary"
+      app:cancelIcon="@drawable/ic_close"
+      app:endColor="@color/colorEnd"
+      app:icon="@drawable/ic_search"
+      app:startColor="@color/colorStart"
+      app:title="@string/app_name"
+      app:titleTextColor="@android:color/white"
+      />
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      >
+
+    <com.example.athira.sahapaadi.ZoomTextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/tcp"
+        android:textSize="18dp"
+        />
+
+  </ScrollView>
+</LinearLayout>

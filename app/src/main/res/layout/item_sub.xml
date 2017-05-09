@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/cardview_bg"
+    android:orientation="horizontal"
+    >
+
+  <View
+      android:id="@+id/stroke"
+      android:layout_width="5dp"
+      android:layout_height="match_parent"
+      android:background="@color/colorPrimary"
+      />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:orientation="vertical"
+      >
+
+    <TextView
+        android:id="@+id/textSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="Mini Project"
+        android:textColor="@color/colorGray"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        >
+
+      <ImageView
+          android:layout_gravity="right"
+          android:id="@+id/image1"
+          android:layout_width="30dp"
+          android:layout_height="30dp"
+          android:gravity="center"
+          android:textColor="@color/colorGray"
+          android:src="@drawable/ic_star_border_black_24dp"
+          android:textStyle="bold"
+          />
+
+      <ImageView
+          android:layout_gravity="right"
+          android:id="@+id/image2"
+          android:layout_width="30dp"
+          android:layout_height="30dp"
+          android:layout_marginLeft="5dp"
+          android:gravity="center"
+          android:textColor="@color/colorGray"
+          android:src="@drawable/ic_file_download_black_24dp"
+          android:textStyle="bold"
+          />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        >
+
+      <TextView
+          android:id="@+id/textDesc"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Bluetooth, Wi-Fi, WiMAX, Cell Phone Technologies. Circuit switching, Message switching, Packet Switching - Datagrams, Virtual circuit, source routing, Cell Switching - Cells, Segmentation and Reassembly, Virtual Paths, ATM design goals, Physical Layers for ATM."
+          android:textColor="@color/colorGray"
+          android:textSize="10sp"
+          android:textStyle="bold"
+          />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        >
+
+      <TextView
+          android:id="@+id/textType"
+          android:layout_width="wrap_content"
+          android:layout_height="20dp"
+          android:background="@drawable/roun_rect_lightgray"
+          android:gravity="center"
+          android:text="Notes"
+          android:textColor="@color/colorGray"
+          android:textSize="10sp"
+          android:textStyle="bold"
+          />
+      </LinearLayout>
+
+</LinearLayout>
+
+</LinearLayout>

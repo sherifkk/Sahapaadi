@@ -7,6 +7,20 @@
     android:orientation="vertical"
     >
 
+  <com.yalantis.jellytoolbar.widget.JellyToolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/colorPrimary"
+      app:cancelIcon="@drawable/ic_close"
+      app:endColor="@color/colorEnd"
+      app:icon="@drawable/ic_info_white_18dp"
+      app:startColor="@color/colorStart"
+      app:title="@string/Register"
+      app:titleTextColor="@android:color/white"
+      />
+
+
   <!--<ImageView-->
   <!--android:id="@+id/imageView"-->
   <!--android:layout_width="wrap_content"-->

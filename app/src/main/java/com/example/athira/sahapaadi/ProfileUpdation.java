@@ -31,7 +31,7 @@ import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ProfileUpdate extends AppCompatActivity {
+public class ProfileUpdation extends AppCompatActivity {
 
   private ProgressDialog pDialog;
 
@@ -74,7 +74,7 @@ public class ProfileUpdate extends AppCompatActivity {
 
     editText = (AppCompatTextView) LayoutInflater.from(this).inflate(R.layout.edit_text, null);
     editText.setBackgroundResource(R.color.colorTransparent);
-    editText.setText("Academic Info");
+    editText.setText("Update Info");
     toolbar.setContentView(editText);
 
     getWindow().getDecorView()
@@ -84,13 +84,12 @@ public class ProfileUpdate extends AppCompatActivity {
     pDialog = new ProgressDialog(this);
     pDialog.setCancelable(false);
 
-    Intent intent = getIntent();
-    name = intent.getStringExtra("name");
-    email = intent.getStringExtra("email");
-    password = intent.getStringExtra("password");
     final Spinner university = (Spinner) findViewById(R.id.university);
     final Spinner program = (Spinner) findViewById(R.id.program);
     final Spinner scheme = (Spinner) findViewById(R.id.schema);
+    final EditText editSemester = (EditText) findViewById(R.id.semester);
+
+    editSemester.setText("6");
 
     universityId = new ArrayList<>();
     universityName = new ArrayList<>();
@@ -120,7 +119,7 @@ public class ProfileUpdate extends AppCompatActivity {
           programName.add(cursor.getString(1));
           programYear.add(cursor.getInt(2) * 2);
         }
-        program.setAdapter(new SpinnerAdapter(ProfileUpdate.this, programName));
+        program.setAdapter(new SpinnerAdapter(ProfileUpdation.this, programName));
       }
 
       @Override public void onNothingSelected(AdapterView<?> adapterView) {
@@ -138,7 +137,7 @@ public class ProfileUpdate extends AppCompatActivity {
           schemeId.add(cursor.getString(0));
           schemeName.add(cursor.getString(1));
         }
-        scheme.setAdapter(new SpinnerAdapter(ProfileUpdate.this, schemeName));
+        scheme.setAdapter(new SpinnerAdapter(ProfileUpdation.this, schemeName));
       }
 
       @Override public void onNothingSelected(AdapterView<?> adapterView) {
@@ -146,10 +145,11 @@ public class ProfileUpdate extends AppCompatActivity {
       }
     });
 
+
+
     FrameLayout buttonSignup = (FrameLayout) findViewById(R.id.buttonSignup);
     buttonSignup.setOnClickListener(new OnClickListener() {
       @Override public void onClick(View view) {
-        EditText editSemester = (EditText) findViewById(R.id.semester);
         String semester = editSemester.getText().toString().trim();
         if (semester.isEmpty()
             || Integer.parseInt(semester) <= 0
@@ -160,7 +160,9 @@ public class ProfileUpdate extends AppCompatActivity {
           editSemester.requestFocus();
           return;
         }
-        signUp(name,email,password,schemeId.get(scheme.getSelectedItemPosition()),semester);
+        dbhelper.updateUser(semester);
+        startActivity(new Intent(ProfileUpdation.this,SplashActivity.class));
+        //signUp(name,email,password,schemeId.get(scheme.getSelectedItemPosition()),semester);
       }
     });
   }
@@ -179,7 +181,7 @@ public class ProfileUpdate extends AppCompatActivity {
               boolean error = jObj.getBoolean("error");
               if (!error) {
 
-                startActivity(new Intent(ProfileUpdate.this, SplashActivity.class));
+                startActivity(new Intent(ProfileUpdation.this, SplashActivity.class));
                 finish();
               } else {
                 Toast.makeText(getApplicationContext(), "Network error, try again!",

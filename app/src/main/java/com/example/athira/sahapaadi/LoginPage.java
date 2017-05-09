@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
@@ -15,6 +14,8 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONException;
@@ -24,7 +25,7 @@ public class LoginPage extends AppCompatActivity {
 
   private ProgressDialog pDialog;
   private SessionManager session;
-  //private DBHelper dbHelper;
+  private DBHelper dbHelper;
   private EditText editEmailID;
   private EditText editPassword;
 
@@ -36,14 +37,8 @@ public class LoginPage extends AppCompatActivity {
     pDialog = new ProgressDialog(this);
     pDialog.setCancelable(false);
 
-    //dbHelper = new DBHelper(this);
+    dbHelper = new DBHelper(this);
     session = new SessionManager(this);
-
-    if (session.isLoggedIn()) {
-      Intent intent = new Intent(LoginPage.this, SplashActivity.class);
-      startActivity(intent);
-      finish();
-    }
 
     buttonLogin.setOnClickListener(new OnClickListener() {
       @Override public void onClick(View view) {
@@ -54,6 +49,10 @@ public class LoginPage extends AppCompatActivity {
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
         if(email.isEmpty() || !email.matches(emailPattern)){
+          YoYo.with(Techniques.Shake)
+              .duration(700)
+              .repeat(2)
+              .playOn(editEmailID);
           editEmailID.setError("Invalid Email address");
           editEmailID.requestFocus();
           editEmailID.selectAll();
@@ -61,6 +60,10 @@ public class LoginPage extends AppCompatActivity {
         }
 
         if (password.length()<6){
+          YoYo.with(Techniques.Shake)
+              .duration(700)
+              .repeat(2)
+              .playOn(editPassword);
           editPassword.setError("Password must be of minimum 6 characters length");
           editPassword.requestFocus();
           editPassword.selectAll();
@@ -74,13 +77,13 @@ public class LoginPage extends AppCompatActivity {
     buttonSignup.setOnClickListener(new OnClickListener() {
       @Override public void onClick(View view) {
 
-        sendMessage();
+        startActivity(new Intent(LoginPage.this, LoginDetails.class));
       }
     });
   }
 
   private void checkLogin(final String email, final String password) {
-    String URL_LOGIN = "http://31.220.58.141/sahapaadi/login.php";
+    String URL_LOGIN = "http://sahapaadi.pe.hu/login.php";
     pDialog.setMessage("Logging in ...");
     showDialog();
 
@@ -93,17 +96,22 @@ public class LoginPage extends AppCompatActivity {
               JSONObject jObj = new JSONObject(response);
               boolean error = jObj.getBoolean("error");
               if (!error) {
-                //session.setLogin(true);
-                String uid = jObj.getString("userid");
-                Log.d("Error", "onErrorResponse: "+uid);
-                //dbHelper.setUser(mid, name);
+                session.setLogin(true);
+                dbHelper.revUser();
+                dbHelper.initUser();
+                dbHelper.putUser(jObj.getString("uid"), jObj.getString("name"), jObj.getString("syid"), jObj.getString("sem"));
                 Intent intent = new Intent(LoginPage.this, SplashActivity.class);
                 startActivity(intent);
                 finish();
               } else {
-                editPassword.setError("Invalid email or Password!");
-                editPassword.requestFocus();
-                editPassword.selectAll();
+                YoYo.with(Techniques.Shake)
+                    .duration(700)
+                    .repeat(2)
+                    .playOn(editEmailID);
+                editEmailID.setError("Invalid email or Password!");
+                editEmailID.requestFocus();
+                editEmailID.selectAll();
+                editPassword.setText("");
               }
             } catch (JSONException e) {
               Toast.makeText(getApplicationContext(), "Network error, try again!",
@@ -120,7 +128,7 @@ public class LoginPage extends AppCompatActivity {
           @Override protected Map<String, String> getParams() {
             Map<String, String> params = new HashMap<>();
             params.put("email", email);
-            params.put("pass", password);
+            params.put("password", password);
             return params;
           }
         };
@@ -133,10 +141,5 @@ public class LoginPage extends AppCompatActivity {
 
   private void hideDialog() {
     if (pDialog.isShowing()) pDialog.dismiss();
-  }
-
-  public void sendMessage() {
-    Intent intent = new Intent(LoginPage.this, LoginDetails.class);
-    startActivity(intent);
   }
 }

@@ -2,26 +2,36 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.athira.sahapaadi">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.INTERNET" />
 
-    <application
-        android:name=".AppController"
-        android:allowBackup="true"
-        android:icon="@drawable/sp"
-        android:label="@string/app_name"
-        android:roundIcon="@drawable/sp"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".LoginPage"/>
-        <activity android:name=".SplashActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ProfileUpdate" />
-        <activity android:name=".HomePage" />
-        <activity android:name=".LoginDetails"/>
-    </application>
+  <application
+      android:name=".AppController"
+      android:allowBackup="true"
+      android:icon="@drawable/sp"
+      android:label="@string/app_name"
+      android:roundIcon="@drawable/sp"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme">
+    <activity android:name=".LoginPage" />
+    <activity android:name=".SplashActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:name=".ProfileUpdate" />
+    <activity android:name=".HomePage" />
+    <activity android:name=".LoginDetails" />
+    <activity
+        android:name=".MainActivity"
+        android:label="@string/title_activity_main"
+        android:theme="@style/AppTheme" />
+    <activity android:name=".SubjectActivity" />
+    <activity android:name=".ReaderActivity"></activity>
+    <activity android:name=".DowActivity"></activity>
+    <activity android:name=".FavActivity"></activity>
+    <activity android:name=".ProfileUpdation"></activity>
+  </application>
 
 </manifest>

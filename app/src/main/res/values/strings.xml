@@ -1,18 +1,26 @@
 <resources>
-    <string name="app_name">Sahapaadi</string>
-    <string name="logo_text1">Sahapaadi</string>
-    <string name="logo_text2">Sahapaadi</string>
-    <string name="openToggle">open</string>
-    <string name="closeToggle">close</string>
+  <string name="app_name">Sahapaadi</string>
+  <string name="logo_text1">Sahapaadi</string>
+  <string name="logo_text2">Sahapaadi</string>
+  <string name="openToggle">open</string>
+  <string name="closeToggle">close</string>
 
-    <string name="circle">
+  <string name="circle">
 M527.
     023,71.8233 C780.213,71.8233,985.464,277.075,985.464,530.265
 C985.464,783.455,780.213,988.707,527.023,988.707
 C273.832,988.707,68.5809,783.455,68.5809,530.265
 C68.5809,277.075,273.832,71.8233,527.023,71.8233 Z
   </string>
-    <integer name="circle_original_width">1062</integer>
-    <integer name="circle_original_height">1062</integer>
+  <integer name="circle_original_width">1062</integer>
+  <integer name="circle_original_height">1062</integer>
+  <string name="title_activity_main">MainActivity</string>
+
+  <string name="navigation_drawer_open">Open navigation drawer</string>
+  <string name="navigation_drawer_close">Close navigation drawer</string>
+
+  <string name="action_settings">Settings</string>
+  <string name="Register">Sign-up</string>
+  <string name="tcp">In computer networking, the transport layer is a conceptual division of methods in the layered architecture of protocols in the network stack in the Internet Protocol Suite and the Open Systems Interconnection (OSI). The protocols of the layer provide host-to-host communication services for applications.[1] It provides services such as connection-oriented data stream support, reliability, flow control, and multiplexing. The details of implementation and semantics of the Transport Layer of the TCP/IP model (RFC 1122),[2] which is the foundation of the Internet, and the Open Systems Interconnection (OSI) model of general networking, are easily compared.[3][4][5][6] In the OSI model the transport layer is most often referred to as Layer 4 or L4, while numbered layers are not used in TCP/IP. The best-known transport protocol of TCP/IP is the Transmission Control Protocol (TCP), and lent its name to the title of the entire suite. It is used for connection-oriented transmissions, whereas the connectionless User Datagram Protocol (UDP) is used for simpler messaging transmissions. TCP is the more complex protocol, due to its stateful design incorporating reliable transmission and data stream services. Other prominent protocols in this group are the Datagram Congestion Control Protocol (DCCP) and the Stream Control Transmission Protocol (SCTP).</string>
 
 </resources>
